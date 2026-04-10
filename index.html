@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="icon" href="/wallpaper/calcu.png">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #ecf0f3;
+            font-family: sans-serif;
+            outline: none;
+        }
+        .main{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .calculator{
+            border: solid 1px rgb(255, 119, 0);
+            padding: 15px;
+        }
+        input{
+            height:70px ;
+            width: 260px;border: none;
+            border-bottom:solid thin rgb(100, 100, 100);
+            color: rgb(70,70,70);
+            font-size: 40px;
+            text-align: end;
+            margin: auto;
+            padding: 20px;
+        }
+        button{
+            height: 48px;
+            width: 48px;
+            border: none;
+            border-radius: 50%;
+            margin: 8px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        button:hover{
+            box-shadow: -5px -5px 12px #ffffff,
+                        5px 5px 12px rgb(0,0,0,.16);
+        }
+        button:active{
+            box-shadow:inset -5px -5px 12px #ffffff,
+                       inset 5px 5px 12px rgb(0,0,0,.16);
+        }
+        .op{
+            color: rgb(255, 115, 0);
+        }
+        .eq{
+            background-color:  rgb(255, 115, 0);
+            font-size: 25px;
+            color: #ffffff;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="calculator">
+            <input type="text" id="screen" placeholder="0">
+            <div class="row">
+                <button onclick="clears()" class="op">Cl</button>
+                <button onclick="del()" class="op">DEL</button>
+                <button onclick="show('%')" class="op">%</button>
+                <button onclick="show('/')" class="op">/</button>
+            </div>
+            <div class="row">
+                <button onclick="show(7)">7</button>
+                <button onclick="show(8)">8</button>
+                <button onclick="show(9)">9</button>
+                <button onclick="show('*')" class="op">*</button>
+            </div>
+            <div class="row">
+                <button onclick="show(4)" >4</button>
+                <button onclick="show(5)">5</button>
+                <button onclick="show(6)">6</button>
+                <button onclick="show('-')" class="op">-</button>
+            </div>
+            <div class="row">
+                <button onclick="show(1)" >1</button>
+                <button onclick="show(2)">2</button>
+                <button onclick="show(3)">3</button>
+                <button onclick="show('+')" class="op">+</button>
+            </div>
+            <div class="row">
+                <button onclick="show(0)" >0</button>
+                <button onclick="show('.')">.</button>
+                <button onclick="show('00')">00</button>
+                <button onclick="eq()" class="eq">=</button>
+            </div>
+        </div>
+    </div> 
+    <script>
+        function show(val)
+        {
+            document.getElementById('screen').value+=val;
+        }
+        function clears()
+        {
+            document.getElementById('screen').value="";
+        }
+        function eq(){
+            var text=document.getElementById("screen").value
+            var result=eval(text)
+            document.getElementById("screen").value=result
+        }
+        function del()
+        {
+            var backs=document.getElementById("screen").value;
+            document.getElementById("screen").value=backs.substring(0,backs.length-1)
+        }
+    </script>
+</body>
+</html>
