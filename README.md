@@ -2,7 +2,7 @@ Simple Calculator Web App
 
 This is a basic calculator web application built using HTML, CSS, and JavaScript. It provides a clean and minimal user interface for performing standard arithmetic operations directly in the browser.
 
-Check the Preview: 
+Check the Preview: https://anfas-kk.github.io/Calculator-/
 
 🚀 Features
 Perform basic calculations: addition, subtraction, multiplication, and division
